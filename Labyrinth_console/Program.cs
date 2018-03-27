@@ -10,6 +10,8 @@ namespace Labyrinth_console
     {
         static void Main(string[] args)
         {
+            MainApp mainApp = new MainApp();
+            mainApp.Run();
         }
     }
 }
