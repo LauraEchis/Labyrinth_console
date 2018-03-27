@@ -10,6 +10,7 @@ namespace Labyrinth_console
     {
         public Cell[,] arr;
         public int size = 0;
+        public int counter;
 
 
         public Labyrinth(int count_cell)
