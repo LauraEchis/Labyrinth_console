@@ -10,5 +10,10 @@ namespace Labyrinth_console
     class MainApp
     {
         StreamReader reader = new StreamReader("C:/Users/laura/source/repos/Labyrinth/small-test.in.txt");
+
+        public void Run()
+        {
+            Console.ReadLine();
+        }
     }
 }
