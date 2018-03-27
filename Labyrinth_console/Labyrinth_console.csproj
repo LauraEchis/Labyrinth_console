@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Cell.cs" />
     <Compile Include="Labyrinth.cs" />
+    <Compile Include="MainApp.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
