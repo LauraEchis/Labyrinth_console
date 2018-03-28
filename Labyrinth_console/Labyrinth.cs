@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Labyrinth_console
+namespace Labyrinth
 {
     class Labyrinth
     {
         public Cell[,] arr;
         public int size = 0;
-        public int counter;
 
 
         public Labyrinth(int count_cell)

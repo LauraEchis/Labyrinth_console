@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Labyrinth_console
+namespace Labyrinth
 {
     class Program
     {

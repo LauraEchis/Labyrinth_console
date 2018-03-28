@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Labyrinth_console
+namespace Labyrinth
 {
     class Cell
     {
@@ -12,6 +12,8 @@ namespace Labyrinth_console
         public bool bottomWall = true;
         public bool leftWall = true;
         public bool rightWall = true;
+
+
 
         public string Encrypt()
         {
