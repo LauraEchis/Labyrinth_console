@@ -10,7 +10,7 @@ namespace Labyrinth_console
     class MainApp
     {
         StreamReader reader = new StreamReader("//small-test.in.txt");
-
+        //проверка
         public void Run()
         {
             Console.ReadLine();
