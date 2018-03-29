@@ -13,6 +13,7 @@ namespace Labyrinth
             MainApp mainApp = new MainApp();
             mainApp.Run("small");
             Console.WriteLine("\r\n");
+
             mainApp.Run("large");
         }
     }
