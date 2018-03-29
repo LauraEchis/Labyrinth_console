@@ -27,10 +27,11 @@ namespace Labyrinth
             lab = new Labyrinth(this.countW);
             playerVector = new Vector(0, 1);
             currentCoord = new Vector(lab.size / 2, 0);
-            RunnerGenerator(firstFlank.Substring(1));
+            RunnerGenerator(firstFlank.Substring(1)); // <------
             playerVector = exitVector;
             currentCoord = exitCoord;
-            RunnerGenerator(secondFlank);
+
+            RunnerGenerator(secondFlank.Substring(1));// <------
         }
 
         public void RunnerGenerator(string flank)
@@ -63,15 +64,17 @@ namespace Labyrinth
                     RotateCellForward(lab.arr[currentCoord.Y, currentCoord.X], playerVector);
                 }
 
-                currentCoord.X = currentCoord.X + playerVector.X;
-                currentCoord.Y = currentCoord.Y + playerVector.Y;
-
                 if (flank.Length == 1)
                 {
                     exitCoord = new Vector(currentCoord.X, currentCoord.Y);
                     exitVector = new Vector(-playerVector.X, -playerVector.Y);
                     break;
                 }
+
+                currentCoord.X = currentCoord.X + playerVector.X;
+                currentCoord.Y = currentCoord.Y + playerVector.Y;
+
+
 
                 flank = flank.Substring(1);
             }
@@ -101,6 +104,8 @@ namespace Labyrinth
 
         private void CLoseSideByDirection(Cell cell, Vector directionVector, bool newValue = false)
         {
+            if (cell.condition == 1)
+                return;
             if (directionVector.Y == 1 && directionVector.X == 0)
                 cell.bottomWall = newValue;
             else if (directionVector.Y == -1 && directionVector.X == 0)

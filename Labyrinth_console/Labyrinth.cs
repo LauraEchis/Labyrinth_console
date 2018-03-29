@@ -36,11 +36,13 @@ namespace Labyrinth
             {
                 res = "";
                 len_j = 0;
+                bool f = false;
                 for (int j = 0; j < size; j++)
                 {
-                    if (arr[i, j] != null)
+                    if (arr[i, j] != null && (!arr[i, j].Encrypt().Equals("f") || f))
                     {
                         res += arr[i, j].Encrypt();
+                        f = true;
                         len_j++;
                     }
                 }
@@ -56,10 +58,9 @@ namespace Labyrinth
                     ans += "\r\n";
                 }
 
-                len_i++;
             }
 
-            ans = ans.Replace("f", " ");
+            //ans = ans.Replace("f", " ");
 
             //var buf2 = ans.Split('\n');
             //ans = "";
@@ -111,7 +112,19 @@ namespace Labyrinth
             //Console.WriteLine("ffffffffffffffffffffffffffffffac5ffffffffffffffffffffffffffffffff".Length.ToString() +
             //                  " " + "\r\n");
 
-            return ans;
+
+            List<string> list_new_ans = ans.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+            string new_ans = "";
+            foreach (var el in list_new_ans)
+            {
+                new_ans += new String(el.Reverse()
+                             .SkipWhile(x => x == 'f')
+                             .Reverse()
+                             .ToArray()
+                             );
+                new_ans += "\r\n";
+            }
+            return new_ans;
         }
     }
 }

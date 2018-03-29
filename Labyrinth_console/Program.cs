@@ -11,7 +11,9 @@ namespace Labyrinth
         static void Main(string[] args)
         {
             MainApp mainApp = new MainApp();
-            mainApp.Run();
+            mainApp.Run("small");
+            Console.WriteLine("\r\n");
+            mainApp.Run("large");
         }
     }
 }

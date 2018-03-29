@@ -13,7 +13,7 @@ namespace Labyrinth
         public bool leftWall = true;
         public bool rightWall = true;
 
-
+        public int condition = 0;
 
         public string Encrypt()
         {
